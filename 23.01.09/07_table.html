@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML table</title>
+    <style>
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        table : 테이블의 영역을 지정하는 태그
+        caption : 표의 제목
+        thead : 데이터의 종류를 나타내는 태그
+        tbody : 표의 내용을 포함하는 태그
+        tfoot : 표의 요약 부분을 나타낸다
+        tr : table row.  행을 추가
+        th : 데이터의 제목
+        td : 데이터 (값)
+        rowspan : 열 합치기
+        colspan : 행 합치기
+     -->
+    <h1>HTML 표 다루기</h1>
+    <table>
+      <caption>
+        성적표
+      </caption>
+      <thead>
+        <th>반</th>
+        <th>이름</th>
+        <th>나이</th>
+        <th>화학</th>
+        <th>수학</th>
+        <th>영어</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">A반</td>
+          <td>정연탁</td>
+          <td>33살</td>
+          <td colspan="2">100점</td>
+          <td>90점</td>
+        </tr>
+        <tr>
+          <td>정승민</td>
+          <td>33살</td>
+          <td>100점</td>
+          <td colspan="2" rowspan="2">80점</td>
+        </tr>
+        <tr>
+          <td rowspan="2">B반</td>
+          <td>서경진</td>
+          <td>35살</td>
+          <td>80점</td>
+        </tr>
+        <tr>
+          <td>권우용</td>
+          <td>27살</td>
+          <td colspan="3">70점</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="3">합계</th>
+          <td>210점</td>
+          <td>250점</td>
+          <td>230점</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
