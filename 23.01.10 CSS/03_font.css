@@ -1,0 +1,43 @@
+:root {
+  /* font-size: 30px; */
+}
+.size {
+  font-size: 24px;
+}
+.size p {
+  font-size: 0.5em;
+}
+.weight h3 {
+  font-weight: 600;
+  font-weight: normal;
+}
+.align {
+  text-align: justify;
+}
+.height {
+  line-height: 30px;
+}
+.spacing {
+  word-spacing: 5px;
+  letter-spacing: -0.04em;
+}
+.transform {
+  text-transform: lowercase;
+}
+.decoration {
+  text-decoration: solid black underline;
+  text-decoration-style: dotted; /* 선의 종류 */
+  text-decoration-color: red; /* 선의 색상 */
+  text-decoration-line: line-through; /* 선의 위치 */
+  /* text-decoration-thickness: 5px; */ /* 선의 두께 , 표준 아님 */
+
+  color: red; /* 키워드 */
+  color: rgb(68, 128, 168); /* red, green, blue 값을 0~255 사이로 조정. rgb값 */
+  color: #00ff00; /* rgb 값을 16진수로 변경 앞에서 부터 두자리씩 red, green, blue 값 */
+  color: rgba(0, 0, 0, 0.4); /* rgb + 투명도 까지 적용 */
+}
+
+html {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* 폰트 이름에 띄워쓰기가 있으면 "" 안에 작성 없으면 그냥 써도 됨 */
+}
