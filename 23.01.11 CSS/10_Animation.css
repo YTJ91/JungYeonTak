@@ -1,0 +1,81 @@
+body {
+  height: 3000px;
+}
+.container {
+  width: 500px;
+  height: 300px;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  background-color: red;
+  animation-name: scaleUp, fadeIn; /* 실행하고자 하는 애니메이션 이름 지정 */
+  animation-duration: 1s, 1s; /* 지속시간 */
+  animation-delay: 1s, 1s; /* 지연시간 */
+  animation-timing-function: 11near, ease; /* 값 변화의 폭 */
+  animation-iteration-count: 1; /* 반복 횟수 , infinite(무한), 혹은 숫자 */
+  animation-direction: normal; /* 애니메이션의 방향. revers(역재생), altermate(재생 완료 후 역재생), normal(일반재생)*/
+  animation-fill-mode: both;
+  /* fowards(재생이 끝난 후 애니메이션의 마지막 프레임 상태를 유지)
+     backwards(딜레이가 있을 경우 애니메이션 시작 프레임을 적용한다)
+     both(시작 프레임 마지막 프레임 상태를 둘 다 유지) */
+  animation: scaleUp 1s 1s ease 1 normal both, fadeIn 2 1s 1s 11near infinite;
+  margin: 10px;
+}
+
+/* 
+애니메이션 정의 
+구간 마다의 상태값을 상태값 설정.
+from ~ to : from(시작점) ~ to(끝점). 원래 상태에서 시작할 경우 from 생략 가능.
+% : 0 ~ 100% 세부 조정 가능 . 0% 생략 가능
+*/
+@keyframes scaleUp {
+  /* 50% {
+    width: 200px;
+  }
+  75% {
+    width: 150px;
+  } */
+  100% {
+    width: 200px;
+  }
+}
+
+/* opacity(투명도: 0(투명)~1(불투명)를 통해서 fadeIn(서서히 나타나는 효과) */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 오른쪽 하단에 동그란 버튼 스크롤 고정, 밑에서 나타나는 효과 1회 */
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: fixed;
+  right: 5%; /* 강사님은 옵셋 값을 50px로 지정*/
+  bottom: 5%;
+  animation-name: fade, slidUp;
+  animation-duration: 2s;
+  /* 강사님 양식 */
+  /* animation: fade 1s, slidUp 1s; */
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes slidUp {
+  from {
+    transform: translateY(20px);
+  }
+}

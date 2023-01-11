@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
+
+h1 {
+  color: rgb(0, 89, 255);
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 40px;
+  line-height: 40px;
+}
+
+#grblist {
+  display: flex;
+  justify-content: center;
+}
+
+#grblist li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100px;
+  width: 100px;
+  text-align: center;
+}
+
+#grblist li a:hover {
+  background-color: #eee;
+}
+
+main {
+  background-color: #ddd;
+  padding: 50px 0;
+}
+
+.imglist {
+  display: flex;
+  justify-content: center;
+}
+
+.imglist li {
+  width: 100px;
+  height: 150px;
+  border: 2px solid black;
+}
+
+.imglist li + li {
+  margin-left: 10px;
+}
+
+.imglist li a {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imglist li a img {
+  height: 100%;
+  transition: 0.5s;
+}
+
+.imglist li a:hover img {
+  transform: scale(1.1);
+}
+/* align-contens 는 기본적으로 스트레치 이다 */
