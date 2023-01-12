@@ -1,0 +1,156 @@
+@font-face {
+  font-family: SpeedeeK;
+  src: url(../asets/fonts/Speedee_K_L.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: SpeedeeK;
+  src: url(../asets/fonts/Speedee_K_B.woff);
+}
+
+@font-face {
+  font-family: SpeedeeK;
+  src: url(../asets/fonts/Speedee_K_R.woff);
+}
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-family: SpeedeeK;
+  font-weight: 700;
+}
+header {
+  background-color: #fff;
+}
+
+header h1 a img {
+  background-color: #fff;
+}
+header .headerWrapper {
+  display: flex;
+  width: 1160px;
+  height: 140px;
+  margin: 0 auto;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+#gnbList {
+  display: flex;
+}
+
+#gnbList .depth01 {
+  margin-right: 85px;
+  font-size: 2rem;
+}
+
+.util {
+  display: flex;
+}
+.util .utilList {
+  display: flex;
+}
+
+.util .utilList li {
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+
+  font-size: 1.3rem;
+
+  border-radius: 48px;
+
+  text-align: center;
+
+  color: #fff;
+}
+
+.util .utilList li:nth-child(1) {
+  background-color: #db0007;
+}
+
+.util .utilList li:nth-child(2) {
+  margin: 0 4px;
+  background-color: rgb(29, 155, 240);
+}
+
+.util .utilList li:nth-child(3) {
+  background-color: #264a36;
+}
+
+.util .btnSearch {
+  margin-left: 26px;
+  cursor: pointer;
+}
+
+#banner {
+  position: relative;
+}
+
+#banner .slideList li img {
+  width: 100%;
+}
+
+#banner .btnSlide .btn {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#banner .btnSlide .btn.prev {
+  background: url(../asets/imges/bg_swiper_new.png) 0 0 no-repeat;
+
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+
+#banner .btnSlide .btn.next {
+  background: url(../asets/imges/bg_swiper_new.png) 0 0 no-repeat;
+  right: 0;
+  background-position-y: -90px;
+
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
+}
+
+#banner .controls {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#banner .statusBar {
+  width: 300px;
+  height: 6px;
+
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+#banner .controls .btnPlay {
+  width: 36px;
+  height: 36px;
+
+  margin-right: 20px;
+  border-radius: 50%;
+
+  background: url(../asets/imges/bg_swiper_new.png) -92px 0 no-repeat;
+
+  cursor: pointer;
+}
+
+#banner .controls .btnPlay:active {
+  /* background: url(../asets/imges/bg_swiper_new.png) -92px -36px no-repeat; */
+  background-position-y: -36px;
+}

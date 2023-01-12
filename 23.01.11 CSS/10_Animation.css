@@ -67,6 +67,9 @@ from ~ to : from(시작점) ~ to(끝점). 원래 상태에서 시작할 경우 f
   animation-duration: 2s;
   /* 강사님 양식 */
   /* animation: fade 1s, slidUp 1s; */
+
+  /* animation-fill-mode: both; */
+  /* animation-play-state: running;  (재생 상태를 제어한다. running(기본값, 재생), paused(정지)*/
 }
 
 @keyframes fade {

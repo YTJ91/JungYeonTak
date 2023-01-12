@@ -18,11 +18,30 @@ li {
 
 h1 {
   color: rgb(0, 89, 255);
-  position: absolute;
-  top: 0;
-  left: 20px;
-  height: 40px;
+  flex-basis: 150px;
   line-height: 40px;
+}
+
+body {
+  padding-top: 40px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  max-height: 40px;
+  overflow: hidden;
+  transition: max-height 1s;
+
+  z-index: 100;
 }
 
 #grblist {
@@ -81,3 +100,59 @@ main {
   transform: scale(1.1);
 }
 /* align-contens 는 기본적으로 스트레치 이다 */
+
+@media (max-width: 800px) {
+  #grblist {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    overflow: hidden;
+  }
+  #grblist:hover {
+    height: 120px;
+  }
+  header:hover {
+    max-height: 200px;
+  }
+  header .btn {
+    display: flex;
+  }
+}
+
+.btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.sidewrapper {
+  display: flex;
+  height: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-basis: 100px;
+}
+
+.btn span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: black;
+}
+
+/* span + span {
+  margin-top: 3px;
+} */
+
+.btn span:nth-child(2) {
+  margin: 3px 0;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
