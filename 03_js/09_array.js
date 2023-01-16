@@ -45,6 +45,7 @@ for (let i = 0; i < fruts.length; i++) {
   console.log(fruts[i]);
 }
 
+// 어떤 배열이 와도 모든 요소 출력하는 함수 만들기,
 function printElements(arr) {
   for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
