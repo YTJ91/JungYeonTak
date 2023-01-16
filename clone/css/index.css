@@ -154,3 +154,11 @@ header .headerWrapper {
   /* background: url(../asets/imges/bg_swiper_new.png) -92px -36px no-repeat; */
   background-position-y: -36px;
 }
+
+@keyframes slide {
+    to{
+    .slideList a img{
+img
+    }
+    }
+}
