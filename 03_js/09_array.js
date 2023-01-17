@@ -52,3 +52,75 @@ function printElements(arr) {
   }
 }
 printElements(fruts);
+
+/* 
+  배열의 고차함수
+    - 배열의 각 요소를 순화하며 요소를 인자로 받는 콜백함수를 실행한다.
+
+  forEach()
+    - 각 요소를 순화하며 콜백함수를 실행한다.
+    - return되는 값이 없다.
+
+  filter()
+    - 각 요소를 순화하며 콜백함수를 실행햐며, 특정 조건을 만족하는 요소만을 새로운 배열로 모아서 반환한다.
+    - 콜백함수의 return 값이 boolean(true,false)값이어야 한다.
+    - 기본 배열은 변경되지 않는다.
+
+  map()
+    - 각 요소를 순화하며 콜백함수를 실행햐며, 요소의 값을 통해서 새로운 값을 만들어 내며 새로운 배열로 모아서 반환한다.
+    - 해당 반복자의 콜백함수의 return 값이 곧 새로운 배열의 요소가 된다.
+    - 기본 배열은 변경되지 않는다.
+*/
+let userList = [
+  { id: 1, name: "seok", age: 31 },
+  { id: 2, name: "minsu", age: 29 },
+  { id: 3, name: "cheolsu", age: 38 },
+];
+
+console.log("-----forEach()-----");
+userList.forEach(function (user) {
+  console.log(user.name);
+});
+
+userList.forEach((user) => {
+  console.log(user.name);
+});
+
+console.log("-----filter()-----"); //필터
+const result = userList.filter(function (user) {
+  return user.age > 30;
+});
+console.log(result);
+
+userList.filter((user, idx) => {
+  console.log("%d번째 유저", idx + 1);
+  return user.age > 30;
+});
+
+// return 생략
+userList.filter((user) => user.age > 30);
+
+console.log("-----map()-----"); //바꾸는 목적
+const result02 = userList.map(function (user) {
+  return user.name;
+});
+console.log(result02);
+
+userList.map((user) => {
+  return user.name;
+});
+
+userList.map((user) => user.name);
+
+// user 중에 짝수번째 유저만 모아서 result03에 담기
+
+let result03 = userList.filter(function (_, idx) {
+  return (idx + 1) % 2 === 0;
+});
+
+result03 = userList
+  .filter((_, idx) => (idx + 1) % 2 === 0)
+  .map((user) => user.name);
+
+// const result03 = userList.filter((user, idx) => (user.idx + 1) % 2 === 0);
+console.log(result03);

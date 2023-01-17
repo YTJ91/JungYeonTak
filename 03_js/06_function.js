@@ -104,3 +104,67 @@ let bar = function () {
   console.log("bar 함수 실행");
 };
 bar();
+
+/* 
+  콜백함수(callback)
+    - 다른 함수에 인자로 전달되는 함수.
+      => 함수의 실행결과를 가지고 다른 함수를 실행해야 할 때.
+    - JS 에서는 함수를 값으로 평가하기 때문에 가능하다.
+      => 콜백함수로써 값을 전달할 때는 호출하는 형태가 되면 안된다.
+      => 콜백함수를 직접 호출해야되는 경우 익명 함수로 감싸서 그 안에서 호출하면 된다.
+      - 콜백함수로 전달되는 인자로는 화살표 함수를 많이 사용한다.
+*/
+
+function useCallback(a, b, callback) {
+  return callback(a, b);
+}
+
+let result03 = useCallback(5, 6, function (a, b) {
+  return a + b;
+});
+
+let result04 = useCallback(5, 6, sum03);
+// 콜백함수는 값으로 전달해야되기 때문에 익명함수 안에서 호출하는 형태.
+let result05 = useCallback(5, 6, function () {
+  sum03(5, 10);
+});
+
+console.log(result03, result04, result05);
+
+// 인자 n을 전달받아서 콜백함수를 n번 반복 실행하는 함수 만들기.
+
+function repeat(n, callback) {
+  for (let i = 0; i < n; i++) {
+    callback();
+  }
+}
+
+/* 
+  sum03 사용해서 숫자 5, 7 를 더한 값을 7번 출력하기
+  1. sum03을 사용한다. 인자로는 5,7
+  2. console.log() 결과를 출력한다.
+  3. repeat 함수를 통해서 위 과정을 7번 반복한다.
+*/
+
+repeat(7, function () {
+  console.log(sum03(5, 7));
+});
+
+/* 
+  화살표 함수
+    - 화살표를 통해서 함수를 간단하게 표현할 수 있다.
+    => 객체 return 시 ()로 객체를 감싸주어야 return을 생략할 수 있다.
+    - 함수 호이스팅이 일어나지 않는다.
+    - this 바인딩이 되지 않는다.
+
+*/
+console.log("-----화살표 함수-----");
+let arrowSum = (a, b) => {
+  return a + b;
+};
+console.log(arrowSum(2, 3));
+
+// return 생략
+let arrowSum2 = (a, b) => a + b;
+let getuser = (name, age) => ({ name: name, age: age });
+console.log(arrowSum2(2, 3));
