@@ -92,7 +92,7 @@
         3. 변경된 인덱스만큼 인동. => 인덱스를 통한 계산. style 속성의 값은 문자열.
             요소 style.transform = ""
       */
-      let btnList = document.querySelectorAll("button");
+      let btnList = document.querySelectorAll(".btnNum button");
       let slideWrapper = document.querySelector(".slideWrapper");
       let btnSlideList = document.querySelectorAll(".btnSlide");
 
@@ -117,7 +117,9 @@
 
       btnSlideList.forEach((btn) => {
         btn.addEventListener("click", function (e) {
-          changeSlide(index + parsInt(e.target.dataset.index));
+          let indexNum = parseInt(e.target.dataset.index);
+          if (indexNum + index < 0 || indexNum + index > 2) return;
+          changeSlide(index + indexNum);
         });
       });
 
