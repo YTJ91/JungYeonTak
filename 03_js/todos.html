@@ -14,12 +14,9 @@
           <input type="text" />
           <!-- -->
           <button class="btnSubmit">등록</button>
-          <button class="btnSave" type="button">저장</button>
         </form>
       </div>
-      <ul>
-        <li>HTML 배우기<button>삭제</button></li>
-      </ul>
+      <ul></ul>
     </div>
     <script>
       /*
@@ -28,11 +25,9 @@
                    3. input 내용을 비우고, 포커스를 input 태그로 이동 시킨다.
                */
       // 로컬 스트리지를 찾아봐서 없으면 빈 배열로 초기화
-      let todoArr =
-        console.log(JSON.parse(localStorage.getItem("todos"))) || [];
-      // 옵셔널 채이닝을 통해
+      let todoArr = JSON.parse(localStorage.getItem("todos")) || [];
+      // 삼항 연산자를 통해 todoArr가 빈 배열이면 1로, 빈 배열이 아니라면 마지막 요소의 아이디 값으로
       let currentId = todoArr.length === 0 ? 1 : todoArr[todoArr.length - 1].id;
-      // 저장된 데이터의 마지막 요소의 아이디를 호출한다.
 
       let inputTodo = document.querySelector(".inputBox input");
       let btnSubmit = document.querySelector(".btnSubmit");
