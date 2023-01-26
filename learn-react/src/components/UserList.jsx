@@ -1,23 +1,26 @@
-import { useState } from "react";
+import React from "react";
 
-const initalState = [
-  { id: 1, name: "hbs93121", email: "hbs9312@gmail.com" },
-  { id: 2, name: "hsadlk23412", email: "test93@gmail.com" },
-  { id: 3, name: "test_user", email: "cocacola@gmail.com" },
-];
-
-function UserList() {
-  const [userList, setUserList] = useState(initalState);
+function UserList({ userList, handleToggle, handleRemove }) {
   return (
     <div>
-      <div>
-        <input type="text" />
-        <input type="text" />
-      </div>
       <ul>
+        {/* 배열을 랜더링할 때 key 값에 고유한 값을 전달해야 한다. */}
         {userList.map((user) => (
-          <li>
+          // 단축평가를 이용하여 user.active ture인 경우만 파란색 글씨.
+          <li
+            key={user.id}
+            style={{ color: user.active && "blue" }}
+            onClick={() => handleToggle(user.id)}
+          >
             {user.name}({user.email})
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // 이벤트 전파를 막는다.
+                handleRemove(user.id);
+              }}
+            >
+              삭제
+            </button>
           </li>
         ))}
       </ul>
@@ -25,4 +28,4 @@ function UserList() {
   );
 }
 
-export default UserList;
+export default React.memo(UserList);
