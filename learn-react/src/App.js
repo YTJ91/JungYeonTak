@@ -1,18 +1,7 @@
-import { useState } from "react";
-import Users from "./components/Users";
+import Todos from "./components/Todos/Todos";
 
 function App() {
-  const [active, setActive] = useState(true);
-  return (
-    <>
-      {/*       
-      <button onClick={() => setActive(!active)}>토글</button>
-      {active && <Effect />} 
-      */}
-
-      <Users />
-    </>
-  );
+  return <Todos />;
 }
 
 export default App;

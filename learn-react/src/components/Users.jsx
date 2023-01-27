@@ -23,7 +23,7 @@ function Users() {
   const [inputs, setInputs] = useState(initalInputs);
 
   // userMemo : 디펜던시에 있는 값이 변했을 때만 연산한다.
-  const count = useMemo(() => countActive(userList), []);
+  const count = useMemo(() => countActive(userList), [userList]);
   console.log(count);
 
   const { email, name } = inputs;

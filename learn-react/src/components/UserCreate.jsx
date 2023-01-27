@@ -1,11 +1,11 @@
-import React, { useInsertionEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function UserCreate({ handleSubmit, handleInput, inputs }) {
   const { email, name } = inputs;
 
   const inputRef = useRef();
 
-  useInsertionEffect(() => {
+  useEffect(() => {
     console.log("render!");
   });
 
