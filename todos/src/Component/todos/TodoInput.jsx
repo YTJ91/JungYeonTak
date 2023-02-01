@@ -1,8 +1,10 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useRef, useState } from "react";
 import styled from "styled-components";
+import { useTodoDispatch } from "../../Context/todos";
 
-function TodoInput({ dispatch }) {
+function TodoInput() {
+  const dispatch = useTodoDispatch();
+
   const [text, setText] = useState("");
   const nextId = useRef(4);
   const inputRef = useRef();
@@ -19,7 +21,7 @@ function TodoInput({ dispatch }) {
     }
     dispatch({ type: "CREATE_TODO", id: nextId.current++, text });
     setText("");
-    inputRef.current.forcus();
+    inputRef.current.focus();
   };
 
   return (
