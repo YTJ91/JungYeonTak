@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function PostItem() {
   const { postId } = useParams();
@@ -23,6 +23,9 @@ function PostItem() {
     <div>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
+      <button>
+        <Link to={"/post/edit?postId=" + post.id}>수정하기</Link>
+      </button>
     </div>
   );
 }
