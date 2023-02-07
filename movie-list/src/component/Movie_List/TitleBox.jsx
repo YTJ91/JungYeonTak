@@ -1,12 +1,40 @@
+import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
+import React from "react";
 
-function TitleBox({ title, tabList }) {
+function TitleBox({ title, filter, fetchData }) {
+  const [filterList, setFliterList] = useState(filter);
+
+  const handleFilter = (id) => {
+    // 누른 버튼만 active ture, 나머지는 false로
+    setFliterList(
+      filterList.map((filter) =>
+        filter.id === id
+          ? { ...filter, active: true }
+          : { ...filter, active: false }
+      )
+    );
+  };
+
+  useEffect(() => {
+    const { url } = filterList.find((filter) => filter.active);
+    fetchData(url);
+  }, [filterList, fetchData]);
+
   return (
     <Container>
       <SectionTitle>{title}</SectionTitle>
       <TabList>
-        <TabItem active={true}>오늘</TabItem>
-        <TabItem>이번주</TabItem>
+        {/* active가 true인 TabItem만 검은색 배경에 흰색 글씨 만들기 */}
+        {filterList.map((filter) => (
+          <TabItem
+            key={filter.id}
+            active={filter.active}
+            onClick={() => handleFilter(filter.id)}
+          >
+            {filter.text}
+          </TabItem>
+        ))}
       </TabList>
     </Container>
   );
@@ -38,4 +66,4 @@ const TabItem = styled.li`
     `}
 `;
 
-export default TitleBox;
+export default React.memo(TitleBox);

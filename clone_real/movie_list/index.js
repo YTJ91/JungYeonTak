@@ -1,3 +1,3 @@
 import { getUsers } from "./admin.js";
 
-getUsers(1);
+getUsers(3);

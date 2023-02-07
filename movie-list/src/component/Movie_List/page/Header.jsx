@@ -1,37 +1,43 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Search from "../Search";
 
 function Header() {
   return (
     <Container>
       <Wrapper>
-        <h1>
-          <Link to="">Nepp Movie</Link>
-        </h1>
-        <NavBar>
-          <GnbList>
-            <li>
-              <Link to="Movie">영화</Link>
-            </li>
-            <li>
-              <Link to="tv">TV프로그램</Link>
-            </li>
-            <li>
-              <Link to="person">인물</Link>
-            </li>
-          </GnbList>
-        </NavBar>
+        <LeftBox>
+          <h1>
+            <Link to="">Nepp Movie</Link>
+          </h1>
+          <NavBar>
+            <GnbList>
+              <li>
+                <Link to="Movie">영화</Link>
+              </li>
+              <li>
+                <Link to="tv">TV프로그램</Link>
+              </li>
+              <li>
+                <Link to="person">인물</Link>
+              </li>
+            </GnbList>
+          </NavBar>
+        </LeftBox>
+        <Search />
       </Wrapper>
     </Container>
   );
 }
 
 const Container = styled.div`
-  background-color: #ddd;
+  border-bottom: 1px solid #eee;
 `;
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   max-width: 900px;
 
@@ -44,7 +50,7 @@ const Wrapper = styled.div`
 `;
 
 const NavBar = styled.nav`
-  margin-left: 60px;
+  margin-left: 20px;
 `;
 
 const GnbList = styled.ul`
@@ -55,6 +61,10 @@ const GnbList = styled.ul`
   li + li {
     margin-left: 20px;
   }
+`;
+
+const LeftBox = styled.div`
+  display: flex;
 `;
 
 export default Header;

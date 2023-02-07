@@ -1,0 +1,72 @@
+리액트 = JavaScript 기반
+JSX 이라는 문법을 통해 DOM 구조 작성
+컴포넌트 기반
+
+Virtual DOM 이라는 개념을 이용
+
+npx create-react-app learn-react
+=> 리액트 개발에 필요한 모듈들을 자동으로 설치하는 명령어.
+
+node_modules : node.js 로 개발할 때 필요한 모듈들(package)들이 설치되는 폴더
+
+package.json : 프로젝트에 대한 정보를 담은 문서. 의존하고 있는 모듈 등에 대한 정보가 있다.
+
+.gitignore : 여기에 작성된 폴더 및 파일들은 git 추적이 안된다. github에 올라가지도 않는다.
+
+src : 실질적으로 작업을 하는 폴더.
+
+npm (run) start : 개발용 서버를 여는 명령어.
+
+components 는 대문자로 작성
+
+big 프로퍼티가 true 일 때 너비 120px,  위아래 패딩 8px , 글씨 크기 1.2rem
+
+
+컴포넌트 합성 : children을 이용하면 prop drilling을 피할 수 있다.
+
+
+REST API
+
+리소스(자원)
+
+www.naver.com/webtoons
+www.naver.com/articles
+
+GET - 가져오기
+POST - 등록하기
+PUT - 업데이트(전체)
+PATCH -업데이트(일부)
+DELETE - 삭제
+
+쿼리스트링(Query String Parameter)
+www.naver.com/webtoons?name=마음의소리&title=강아지
+
+
+경로 변수(Path 변수)
+www.naver.com/webtoon/1
+www.naver.com/webtoon/{id}
+
+조건문(if, for)
+반복문(for, switch)
+함수 작성
+객채에 대해 이해
+
+할당, 참조, 호출, 식별자, 데이터 타입 등 용어
+
+할당(asignment) : 변수에 값을 저장하는 것.
+참조(reference) : 식별자 (변수나 함수 혹은 객체의 프로퍼티)에 저장된 값을 읽어오는 것
+호출(call) : 작성된 함수를 실행하는 것.
+반환(return) : 함수의 실행 결과로 특정 값을 준다.
+매개변수 (Parameter) : 함수에 전달될 값에 이름을 짓는 것 ( 함수 내부에서 사용할 변수와 비슷)
+인자(argument) : 매개변수를 통해서 출력되는 실제 값.
+분기처리 : 조건에 따라 실행될 코드를 작성하는 것.
+프로퍼티(property) : 객체에 할당되어 있는 속성. => ex)user.name
+메서드(method) : 객체에 할당되어 있는 속성이 함수일 때 메서드라고 한다.
+객체(object) : {}(객체 리터럴)을 통해서 작성한 데이터 혹은 new 연산자아 함께 생성자를 호출하면 반환되는 값.
+	=> . 을 통해 프로퍼티 참조가 가능하면 객체
+	=>  객체가 아닌 값(원시값): 문자(string), 숫자(number), 불리언(boolean : true, false), undefined, null
+	=> JS에서 문자열.strsub()처럼 메서드 호출이 가능하지만 객체가 아니다.
+콜백함수(callback) : 함수에 인자로 전달되는 함수
+	=> 상황에 따라 실행될 코드가 다를 때 사용한다.
+	=> ex) 클릭 시 실행될 코드를 함수형태로 전달.
+
