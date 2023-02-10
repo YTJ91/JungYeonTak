@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SignUpForm from "./SignUp/SignUpForm";
+import SignUpForm from "../Login/SignUpForm";
 
 function SignUp() {
   return (
@@ -11,9 +11,11 @@ function SignUp() {
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   height: 100vh;
+
+  background-color: #eee;
 `;
+
 export default SignUp;

@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { signUpUser } from "../../../api/auth";
-import Button from "../../Button";
-import InputBox from "../../InputBox";
+import { signUpUser } from "../../api/auth";
+import Button from "../common/Button";
+import Input from "../common/Input";
 
 function SignUpForm() {
   const [inputs, setInputs] = useState({
-    name: "",
     email: "",
     password: "",
+    name: "",
   });
 
   const navigate = useNavigate();
@@ -28,48 +28,54 @@ function SignUpForm() {
 
     if (data.success) {
       alert("회원가입에 성공했습니다.");
-      navigate("/login");
+      navigate("/");
     }
   };
 
   return (
     <Container>
+      <h2>SignUp</h2>
       <form onSubmit={handleSubmit}>
-        <h2>SignUp</h2>
-        <InputBox placeholder="이름을 입력해주세요." hide={inputs.name !== ""}>
-          <input type="text" name="name" onChange={handleInputs} />
-        </InputBox>
-
-        <InputBox
-          placeholder="이메일을 입력해주세요."
-          hide={inputs.email !== ""}
-        >
-          <input type="text" name="email" onChange={handleInputs} />
-        </InputBox>
-
-        <InputBox
-          placeholder="비밀번호를 입력해주세요."
-          hide={inputs.password !== ""}
-        >
-          <input type="password" name="password" onChange={handleInputs} />
-        </InputBox>
-
+        <Input
+          type="name"
+          value={inputs.name}
+          onChange={handleInputs}
+          name="name"
+          placeholder="이름을 입력하세요."
+        />
+        <Input
+          type="email"
+          value={inputs.email}
+          onChange={handleInputs}
+          name="email"
+          placeholder="이메일을 입력하세요."
+        />
+        <Input
+          type="password"
+          value={inputs.password}
+          onChange={handleInputs}
+          name="password"
+          placeholder="비밀번호를 입력하세요"
+        />
         <BtnBox>
-          <Button text="SignUp" />
-          <Button text="Cancle" bgcolor="red" type="button" />
+          <Button>SignUp</Button>
+          <Button type="button" bgColor="red" onClick={() => navigate("/")}>
+            Cancel
+          </Button>
         </BtnBox>
       </form>
     </Container>
   );
 }
 
+// 너비 500px, padding 20px, 흰색 배경
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
   width: 300px;
-  padding: 20px;
+  padding: 50px 0;
   background-color: #fff;
 
   h2 {

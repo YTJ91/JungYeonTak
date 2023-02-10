@@ -39,5 +39,5 @@ export const signIn = async (form) => {
 export const getCurrentUser = async () => {
   let { data } = await authAxios.get("/users/current");
 
-  console.log(data);
+  return data;
 };

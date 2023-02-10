@@ -15,6 +15,7 @@ const Container = styled.div`
   position: relative;
 
   height: 25px;
+
   input {
     width: 100%;
     height: 100%;
@@ -34,7 +35,7 @@ const Container = styled.div`
 
 const Placeholder = styled.div`
   color: #aaa;
-  font-size: 0.8rem;
+  user-select: none;
   padding: 0 5px;
 `;
 
