@@ -1,17 +1,26 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { patchProfile } from "../../api/auth";
+import { fetchUser } from "../../redux/user";
 import ImageCrop from "../common/ImageCrop";
 
 function ProfileBox() {
   const [open, setOpen] = useState(false);
   const [url, setUrl] = useState("");
+  const [filename, setFilename] = useState("");
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user);
 
   const handleInput = (e) => {
+    if (e.target.files.length === 0) return;
     const reader = new FileReader();
 
-    //  변환이 완료되면 실행될 코드 (비동기)
+    // 변환이 완료되면 실행될 코드(비동기)
     reader.onload = () => {
       setUrl(reader.result);
+      setFilename(e.target.files[0]);
     };
 
     // File 객체를 url로 변환
@@ -19,6 +28,19 @@ function ProfileBox() {
 
     setOpen(true);
   };
+
+  const handleSubmit = async (file) => {
+    const form = new FormData();
+
+    form.append("profile", file);
+
+    await patchProfile(form);
+
+    dispatch(fetchUser());
+
+    setOpen(false);
+  };
+
   return (
     <>
       <Container>
@@ -30,12 +52,17 @@ function ProfileBox() {
           onChange={handleInput}
         />
         <ImageBox htmlFor="image">
-          <img src={url} alt="" />
+          <img src={user.data.profile_url} alt="" />
         </ImageBox>
-        <UserName>정연탁</UserName>
+        <UserName>{user.data.name}</UserName>
       </Container>
       {open && (
-        <ImageCrop closeModal={() => setOpen(false)} originalUrl={url} />
+        <ImageCrop
+          closeModal={() => setOpen(false)}
+          originalUrl={url}
+          filename={filename}
+          onSubmit={handleSubmit}
+        />
       )}
     </>
   );
@@ -50,7 +77,7 @@ const Container = styled.div`
   background-color: #fff;
 `;
 
-const ImageBox = styled.div`
+const ImageBox = styled.label`
   display: flex;
   align-items: center;
   justify-content: center;

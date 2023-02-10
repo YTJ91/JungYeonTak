@@ -41,3 +41,14 @@ export const getCurrentUser = async () => {
 
   return data;
 };
+
+export const patchProfile = async (form) => {
+  let { data } = await authAxios.patch("/users/profile", form);
+
+  return data;
+};
+
+export const createPost = async (form) => {
+  let { data } = await authAxios.patch("post/profile", form);
+  return data;
+};
