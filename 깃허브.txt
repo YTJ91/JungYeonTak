@@ -1,0 +1,7 @@
+1.github에서 닉네임.github.io 라는 레포지터리만들기
+2.보여줄 html 파일 푸시
+3. settings=> 왼쪽 메뉴 pages => source는 deploy from a branch, Branch는 index.html이 있는 브랜치와 디렉토리 지정
+4. 다른 브랜치도 똑같이 설정하면 닉네임.github.io/레포지터리이름으로 호스팅된다.
+	=> 다른 레포지터리에서 링크를 /로 이동시키면 해당 레포지터리의 루트가 아니라 github.io의 루트로 이동하니까 주의!
+
+파일크기, 백엔드 불가능, 데이터 통신량 제한 등...
