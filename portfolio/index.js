@@ -1,4 +1,4 @@
-const introText = document.querySelectorAll("span, li");
+const introText = document.querySelectorAll("h1, span, li");
 window.onload = () => {
   setTimeout(function () {
     let timer = 100;

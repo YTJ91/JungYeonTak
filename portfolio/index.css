@@ -23,6 +23,10 @@ header {
   padding: 0 50px;
 }
 
+header h1 {
+  opacity: 0;
+}
+
 header ul {
   display: flex;
 }
