@@ -1,0 +1,36 @@
+main .about {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+main .about::after {
+  height: 95vh;
+  width: 100%;
+  content: "";
+  background: url(./img/FFh1F8IVgAMgQT7.jfif);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main .about h1 {
+  font-size: 80px;
+  font-weight: 800;
+  color: white;
+
+  padding: 0 auto 3rem;
+}
+
+main .aboutBase {
+  width: 33%;
+  height: 3rem;
+}
