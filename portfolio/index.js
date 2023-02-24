@@ -7,3 +7,13 @@ window.onload = () => {
     });
   }, 1200);
 };
+
+let aboutSection = document.querySelector(".about");
+
+window.addEventListener("scroll", (e) => {
+  // console.log(window.scrollY);
+  const rect = aboutSection.getBoundingClientRect();
+  const opacity = (-rect.top + rect.height / 2) / 300;
+
+  aboutSection.style.opacity = opacity;
+});
