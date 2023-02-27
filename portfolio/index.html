@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/skill.css" />
+    <link rel="stylesheet" href="./css/projcet.css" />
     <title>Portfolio</title>
     <script src="./index.js" defer></script>
     <script
@@ -50,7 +52,7 @@
           <span>O</span>
         </p>
       </div>
-      <section class="about">
+      <article class="about">
         <div class="warpper">
           <div class="introduce">
             <img src="./img/Hoshiyomi.webp" alt="" class="picture" />
@@ -129,16 +131,75 @@
                 <i class="fa-solid fa-folder-open" ;></i>
               </div>
               <div class="contentbox">
-                <h3>
-                  Github
-                  <br />
-                  https://github.com/YTJ91
-                </h3>
+                <a href="https://github.com/YTJ91" target="_blank">
+                  <h3>
+                    Github
+                    <br />
+                    https://github.com/YTJ91
+                  </h3>
+                </a>
               </div>
             </li>
           </ul>
         </div>
-      </section>
+      </article>
+      <article class="skill">
+        <div class="warpper">
+          <h1>SKILL</h1>
+          <ul class="skillImg">
+            <li class="skillImgBox">
+              <h3>FRONTEND</h3>
+              <img src="./img/logo.jpg" alt="" />
+            </li>
+            <li class="controlImgBox">
+              <h3>VERSON CONTROL</h3>
+              <img src="./img/version-control.jpg" alt="" />
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article class="project">
+        <div class="warpper">
+          <h1>PROJECT</h1>
+          <ul class="projcetSlider">
+            <li class="projcetList">
+              <ul class="projectPage">
+                <div class="projcetTitle">
+                  <h3>포트폴리오 웹사이트</h3>
+                  <h5>2023 .02(개인 프로젝트)</h5>
+                </div>
+                <div class="projectWrapper">
+                  <li class="projectImg">
+                    <img src="./img/protfolio.png" alt="" />
+                    <h4>
+                      프론트엔드 포트폴리오 작성용으로<br />
+                      제작된 페이지 입니다.<br />
+                      현재 보고 계시는 웹사이트에 해당합니다.
+                    </h4>
+                  </li>
+                  <li class="projectText">
+                    <p>
+                      <b>사용 기술</b> <br />
+                      -HTML, CSS, JS <br />
+                      <br />
+                      <b>페이지 정보</b> <br />
+                      HTML, CSS, JS 로만 작업 하였습니다. <br />
+                      작업을 통하여 REACT의 편리함을 체감 하였습니다. <br />
+                      반응형 웹사이트로 변경 작업 중 입니다. <br />
+                    </p>
+                    <p>
+                      <b>기능</b> <br />
+                      자기 소개, 인적 사항, Github 링크, 보유 기술 확인 <br />
+                      <br />
+                      <b>Github</b>
+                    </p>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </article>
     </main>
   </body>
 </html>

@@ -1,0 +1,100 @@
+main .skill {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+main .skill::after {
+  height: 95vh;
+  width: 100%;
+  content: "";
+  background: url(../img/skill.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main .skill .warpper {
+  height: 80vh;
+  width: 60vw;
+}
+
+main .skill h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+main .skill .skillImg {
+  height: 60vh;
+
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
+}
+
+main .skill .skillImgBox {
+  background-color: white;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s linear;
+}
+
+main .skill .skillImgBox:hover {
+  transform: scale(1.05);
+}
+
+main .skill .skillImgBox h3 {
+  color: grey;
+
+  border-bottom: 2px solid grey;
+  padding: 1rem;
+}
+
+main .skill .skillImgBox img {
+  width: 20vw;
+  padding-top: 1rem;
+  border-radius: 1rem;
+}
+
+main .skill .controlImgBox {
+  background-color: white;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s linear;
+}
+
+main .skill .controlImgBox:hover {
+  transform: scale(1.05);
+}
+
+main .skill .controlImgBox h3 {
+  color: grey;
+
+  border-bottom: 2px solid grey;
+  padding: 1rem;
+}
+
+main .skill .controlImgBox img {
+  width: 20vw;
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 1rem;
+}

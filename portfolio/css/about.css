@@ -5,6 +5,7 @@ main .about {
   position: relative;
 
   justify-content: center;
+  align-items: center;
 
   color: white;
 }
@@ -13,7 +14,7 @@ main .about::after {
   height: 95vh;
   width: 100%;
   content: "";
-  background: url(./img/FFh1F8IVgAMgQT7.jfif);
+  background: url(../img/about.jfif);
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -23,8 +24,7 @@ main .about::after {
 }
 
 main .about .warpper {
-  padding-top: 60px;
-  width: 100vh;
+  width: 70vw;
 }
 
 main .about .introduce {
@@ -75,14 +75,6 @@ main .aboutBase li {
   gap: 1.3rem;
 }
 
-main .aboutBase li {
-  display: flex;
-
-  align-items: center;
-
-  gap: 1.3rem;
-}
-
 main .aboutBase li .imgbox {
   width: 48px;
   height: 48px;
@@ -94,4 +86,14 @@ main .aboutBase li h3 {
   font-size: 1 rem;
   font-weight: 500;
   letter-spacing: 0.8;
+}
+
+main .aboutBase li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main .aboutBase li a:visited {
+  color: inherit;
+  text-decoration: none;
 }

@@ -65,6 +65,8 @@ header nav p {
 
 main {
   padding-top: 5vh;
+
+  opacity: 1;
 }
 
 main .mainpage {
@@ -80,7 +82,7 @@ main .mainpage::before {
   height: 100%;
   width: 100%;
   content: "";
-  background: url(./img/FFhjbfZaAAApXnJ.jpg);
+  background: url(../img/main.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
