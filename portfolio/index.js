@@ -9,12 +9,20 @@ window.onload = () => {
 };
 
 let aboutSection = document.querySelector(".about");
+<<<<<<< Updated upstream
+=======
 let mainpage = document.querySelector(".mainpage");
 let skillPage = document.querySelector(".skill");
+>>>>>>> Stashed changes
 
 window.addEventListener("scroll", (e) => {
   // console.log(window.scrollY);
   const rect = aboutSection.getBoundingClientRect();
+<<<<<<< Updated upstream
+  const opacity = (-rect.top + rect.height / 2) / 300;
+
+  aboutSection.style.opacity = opacity;
+=======
 
   const opacity = (-rect.top + rect.height / 2) / 300;
 
@@ -42,4 +50,5 @@ window.addEventListener("scroll", (e) => {
   sectionList.forEach((section) => {
     sectionList.querySelector("h2").style.opacity = opacity;
   });
+>>>>>>> Stashed changes
 });

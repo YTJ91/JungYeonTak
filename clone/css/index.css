@@ -1,18 +1,4 @@
-@font-face {
-  font-family: SpeedeeK;
-  src: url(../asets/fonts/Speedee_K_L.woff);
-  font-weight: 400;
-}
 
-@font-face {
-  font-family: SpeedeeK;
-  src: url(../asets/fonts/Speedee_K_B.woff);
-}
-
-@font-face {
-  font-family: SpeedeeK;
-  src: url(../asets/fonts/Speedee_K_R.woff);
-}
 
 :root {
   font-size: 10px;
@@ -29,11 +15,14 @@ header {
 header h1 a img {
   background-color: #fff;
 }
+
+.wrapper {
+  max-width: 1168px;
+  margin: 0 auto;
+}
 header .headerWrapper {
   display: flex;
-  width: 1160px;
   height: 140px;
-  margin: 0 auto;
 
   align-items: center;
   justify-content: space-between;
@@ -155,10 +144,70 @@ header .headerWrapper {
   background-position-y: -36px;
 }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+#live .liveWrapper {
+  padding: 20px 0;
+}
+
+#live .liveWrapper .title {
+  font-size: 4rem;
+}
+
+#live .liveWrapper .eventList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc((1168px - (366px * 3)) / 2);
+  margin-top: 60px;
+}
+
+#live .liveWrapper .eventList li {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 438px;
+
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+#live .liveWrapper .eventList li .contentsBox {
+  padding: 15px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+footer .footerWrapper {
+  padding: 45px 0 55px;
+  background-color: #292929;
+}
+
+@media (max-width: 1168px) {
+  #live .liveWrapper {
+    max-width: 768px;
+  }
+
+  #live .liveWrapper .title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 790px) {
+  #live .liveWrapper .eventList {
+    justify-content: center;
+  }
+}
+=======
+>>>>>>> Stashed changes
 @keyframes slide {
     to{
     .slideList a img{
 img
     }
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> 510b2c8c3af33121eb369a34a70f9da736e4e42a
+>>>>>>> Stashed changes

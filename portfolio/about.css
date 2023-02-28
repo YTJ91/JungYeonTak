@@ -1,0 +1,97 @@
+main .about {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  justify-content: center;
+
+  color: white;
+}
+
+main .about::after {
+  height: 95vh;
+  width: 100%;
+  content: "";
+  background: url(./img/FFh1F8IVgAMgQT7.jfif);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main .about .warpper {
+  padding-top: 60px;
+  width: 100vh;
+}
+
+main .about .introduce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+main .about .picture {
+  top: 20vh;
+  width: 20vh;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+main .about h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+
+  text-align: center;
+  padding: 0 auto 3rem;
+}
+
+main .about .introduceText h3 {
+  padding: 1rem;
+}
+
+main .aboutBase {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-around;
+
+  padding-top: 2rem;
+  row-gap: 3rem;
+}
+
+main .aboutBase li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.3rem;
+}
+
+main .aboutBase li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.3rem;
+}
+
+main .aboutBase li .imgbox {
+  width: 48px;
+  height: 48px;
+  font-size: 40px;
+  text-align: center;
+}
+
+main .aboutBase li h3 {
+  font-size: 1 rem;
+  font-weight: 500;
+  letter-spacing: 0.8;
+}
